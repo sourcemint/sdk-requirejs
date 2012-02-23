@@ -1,0 +1,18 @@
+{
+    "name": "sourcemint-sdk-requirejs",
+    "version": "0.1.0",
+    "dependencies": {
+        "q": "0.x",
+        "requirejs": "1.x",
+        "sourcemint-platform-nodejs": "0.x"
+    },
+    "devDependencies": {
+        "vows": "0.x",
+        "n-util": "0.x",
+        "zombie": "0.x",
+        "sourcemint-loader-js": "0.x"
+    },
+    "scripts": {
+        "test": "vows tests/adapter/vows"
+    }
+}
