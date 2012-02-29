@@ -22,7 +22,8 @@ exports.main = function()
 			done = Q.when(done, function()
 			{
 				return BUNDLER.bundle(exampleBasePath, __dirname + "/dist", {
-					packageIdHashSeed: "__TEST__"
+					packageIdHashSeed: "__TEST__",
+                    forceCompleteBuild: true
 				});
 			});
 		}
@@ -35,6 +36,7 @@ exports.main = function()
 		}, {
 			uris: FS.readdirSync(__dirname + "/dist").filter(function(filename)
 				{
+			        if (/\.manifest\.json$/.test(filename)) return false;
 					return FS.statSync(__dirname + "/dist/" + filename).isFile();
 				}).map(function(filename)
 				{
