@@ -1,3 +1,4 @@
+// @sourcemint-bundle-partition-map: {"report":[1214,2639]}                                                                                                                           
 require.bundle("", function(require)
 {
     function define(id, dependencies, moduleInitializer)
@@ -25,3 +26,4 @@ require.bundle("", function(require)
     }));
     require.memoize("/package.json", {"main":"/init.js","directories":{"lib":""},"mappings":{}});
 });
+// @sourcemint-bundle-report: {"sourceReport":{"mainPackage":"/pinf/workspaces/github.com/sourcemint/sdk-requirejs/0/examples/01-LoaderFeatures/03-SpecifyMain","packages":{"/pinf/workspaces/github.com/sourcemint/sdk-requirejs/0/examples/01-LoaderFeatures/03-SpecifyMain":{"mainModule":{"path":"/pinf/workspaces/github.com/sourcemint/sdk-requirejs/0/examples/01-LoaderFeatures/03-SpecifyMain/init.js"},"modules":{"/pinf/workspaces/github.com/sourcemint/sdk-requirejs/0/examples/01-LoaderFeatures/03-SpecifyMain/init.js":{"staticLinks":{},"treatAs":"js-module"}},"mappings":{}}}},"mappedReport":{"mainPackage":"/pinf/workspaces/github.com/sourcemint/sdk-requirejs/0/examples/01-LoaderFeatures/03-SpecifyMain","packages":{"/pinf/workspaces/github.com/sourcemint/sdk-requirejs/0/examples/01-LoaderFeatures/03-SpecifyMain":{"mainModule":{"path":"/pinf/workspaces/github.com/sourcemint/sdk-requirejs/0/examples/01-LoaderFeatures/03-SpecifyMain/init.js"},"modules":{"/pinf/workspaces/github.com/sourcemint/sdk-requirejs/0/examples/01-LoaderFeatures/03-SpecifyMain/init.js":{"staticLinks":{},"treatAs":"js-module"}},"mappings":{}}}},"bundleReport":{"mainBundle":"/pinf/workspaces/github.com/sourcemint/sdk-requirejs/0/examples/03-SDKFeatures/01-BundlerMiddleware/dist/03-SpecifyMain.js","packages":{},"modules":{"/init.js":"/pinf/workspaces/github.com/sourcemint/sdk-requirejs/0/examples/01-LoaderFeatures/03-SpecifyMain/init.js"}}}
