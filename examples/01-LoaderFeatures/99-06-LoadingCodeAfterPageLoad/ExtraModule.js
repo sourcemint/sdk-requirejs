@@ -5,6 +5,9 @@ define(function(require, exports, module)
 
     exports.init = function()
     {
-        module.log(MAIN.getExtraModuleGreeting());
+        return MAIN.getExtraModuleGreeting().then(function(msg)
+        {
+            module.log(msg);
+        });
     }
 });

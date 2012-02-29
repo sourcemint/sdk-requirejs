@@ -17,9 +17,7 @@ define(function(require, exports, module)
 
         require([extraModuleID], function(EXTRA_MODULE)
         {
-            EXTRA_MODULE.init();
-
-            result.resolve();
+            EXTRA_MODULE.init().then(result.resolve, result.reject);
         });
 
         return result.promise;
@@ -27,6 +25,15 @@ define(function(require, exports, module)
 
     exports.getExtraModuleGreeting = function()
     {
-        return "Hello from 99-06-LoadingCodeAfterPageLoad/ExtraModule!";
+        var result = Q.defer();
+
+        var extraModuleID = "pkg/hello";
+
+        require([extraModuleID], function(EXTRA_MODULE)
+        {
+            result.resolve(EXTRA_MODULE.getHello() + " from 99-06-LoadingCodeAfterPageLoad/ExtraModule!");
+        });
+
+        return result.promise;
     }
 });

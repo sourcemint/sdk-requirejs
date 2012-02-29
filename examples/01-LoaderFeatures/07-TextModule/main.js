@@ -1,11 +1,12 @@
 
 define(function(require, exports, module)
 {
-    var TEXT = require("text!./hello.txt");
+    var TEXT1 = require("text!./hello.js"),
+        TEXT2 = require("text!./hello.txt");
 
     exports.main = function(options)
     {
-        TEXT = TEXT.replace(" \\ \" 0 - _ . ! ~ * ' ( ) ; , / ? : @ & = + $", "");
+        var TEXT = TEXT1 + TEXT2.replace(" \\ \" 0 - _ . ! ~ * ' ( ) ; , / ? : @ & = + $", "");
 
         if (TEXT.length != 5)
         {

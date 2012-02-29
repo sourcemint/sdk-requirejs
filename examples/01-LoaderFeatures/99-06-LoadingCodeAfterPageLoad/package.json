@@ -1,11 +1,15 @@
 {
     "main": "./main.js",
+    "mappings": {
+        "pkg": "./sub-package"
+    },
     "config": {
         "github.com/sourcemint/bundler-js/0/-meta/config/0": {
             "adapter": "github.com/sourcemint/sdk-requirejs/0",
             "resolvers": {
                 "/main.js": [
-                    "./ExtraModule.js"
+                    "./ExtraModule.js",
+                    "pkg/hello"
                 ]
             }
         }
