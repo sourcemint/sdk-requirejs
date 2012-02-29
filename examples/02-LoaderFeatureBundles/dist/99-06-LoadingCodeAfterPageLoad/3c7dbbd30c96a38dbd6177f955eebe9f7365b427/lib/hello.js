@@ -16,14 +16,12 @@ require.bundle("", function(require)
             }
         }
     }
-    require.memoize("/ExtraBundle.js", define('',['require','exports','module','./main.js'],function(require, exports, module)
+    require.memoize("/lib/hello.js", define('',['require','exports','module'],function(require, exports, module)
     {
-        var MAIN = require("./main.js");
-    
-        exports.init = function()
+        exports.getHello = function()
         {
-            module.log(MAIN.getExtraBundleGreeting());
+            return "Hello";
         }
     }));
-    require.memoize("/package.json", {"main":"/ExtraBundle.js","directories":{"lib":""},"mappings":{}});
+    require.memoize("/package.json", {"directories":{"lib":"lib"},"main":"lib/hello.js","mappings":{}});
 });

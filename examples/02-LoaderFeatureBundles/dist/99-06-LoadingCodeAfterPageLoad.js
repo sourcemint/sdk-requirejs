@@ -34,9 +34,7 @@ require.bundle("", function(require)
     
             require([extraModuleID], function(EXTRA_MODULE)
             {
-                EXTRA_MODULE.init();
-    
-                result.resolve();
+                EXTRA_MODULE.init().then(result.resolve, result.reject);
             });
     
             return result.promise;
@@ -44,8 +42,18 @@ require.bundle("", function(require)
     
         exports.getExtraModuleGreeting = function()
         {
-            return "Hello from 99-06-LoadingCodeAfterPageLoad/ExtraModule!";
+            var result = Q.defer();
+    
+            var extraModuleID = "pkg/hello";
+    
+            require([extraModuleID], function(EXTRA_MODULE)
+            {
+                result.resolve(EXTRA_MODULE.getHello() + " from 99-06-LoadingCodeAfterPageLoad/ExtraModule!");
+            });
+    
+            return result.promise;
         }
     }));
-    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":""},"mappings":{}});
+    require.memoize("/package.json", {"main":"/main.js","mappings":{"pkg":"3c7dbbd30c96a38dbd6177f955eebe9f7365b427"},"directories":{"lib":""}});
+    require.memoize("3c7dbbd30c96a38dbd6177f955eebe9f7365b427/package.json", {"directories":{"lib":"lib"},"mappings":{}});
 });

@@ -16,13 +16,14 @@ require.bundle("", function(require)
             }
         }
     }
-    require.memoize("/main.js", define('',['require','exports','module','./hello.txt'],function(require, exports, module)
+    require.memoize("/main.js", define('',['require','exports','module','./hello.js','./hello.txt'],function(require, exports, module)
     {
-        var TEXT = require("./hello.txt");
+        var TEXT1 = require("./hello.js"),
+            TEXT2 = require("./hello.txt");
     
         exports.main = function(options)
         {
-            TEXT = TEXT.replace(" \\ \" 0 - _ . ! ~ * ' ( ) ; , / ? : @ & = + $", "");
+            var TEXT = TEXT1 + TEXT2.replace(" \\ \" 0 - _ . ! ~ * ' ( ) ; , / ? : @ & = + $", "");
     
             if (TEXT.length != 5)
             {
@@ -32,6 +33,7 @@ require.bundle("", function(require)
             module.log(TEXT + " from 07-TextModule!");
         }
     }));
-    require.memoize("/hello.txt", "Hello%20%5C%20%22%200%20-%20_%20.%20!%20~%20*%20'%20(%20)%20%3B%20%2C%20%2F%20%3F%20%3A%20%40%20%26%20%3D%20%2B%20%24");
+    require.memoize("/hello.js", "Hello");
+    require.memoize("/hello.txt", "%20%5C%20%22%200%20-%20_%20.%20!%20~%20*%20'%20(%20)%20%3B%20%2C%20%2F%20%3F%20%3A%20%40%20%26%20%3D%20%2B%20%24");
     require.memoize("/package.json", {"main":"/main.js","directories":{"lib":""},"mappings":{}});
 });

@@ -22,8 +22,12 @@ require.bundle("", function(require)
     
         exports.init = function()
         {
-            module.log(MAIN.getExtraModuleGreeting());
+            return MAIN.getExtraModuleGreeting().then(function(msg)
+            {
+                module.log(msg);
+            });
         }
     }));
-    require.memoize("/package.json", {"main":"/ExtraModule.js","directories":{"lib":""},"mappings":{}});
+    require.memoize("/package.json", {"main":"/ExtraModule.js","mappings":{"pkg":"3c7dbbd30c96a38dbd6177f955eebe9f7365b427"},"directories":{"lib":""}});
+    require.memoize("3c7dbbd30c96a38dbd6177f955eebe9f7365b427/package.json", {"directories":{"lib":"lib"},"main":"/ExtraModule.js","mappings":{}});
 });
