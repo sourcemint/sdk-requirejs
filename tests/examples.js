@@ -1,5 +1,6 @@
 
-var EXAMPLES = require("sourcemint-platform-nodejs/tests/examples");
+var EXAMPLES = require("sourcemint-platform-nodejs/tests/examples"),
+    ERROR = require("sourcemint-platform-nodejs/lib/util/error");
 
 
 exports.main = EXAMPLES.main;
@@ -12,5 +13,5 @@ if (require.main === module) {
     exports.main({
         packageBasePath: __dirname + "/..",
         extraExamples: exports.extraExamples
-    });
+    }).fail(ERROR.exitProcessWithError);
 }
