@@ -1,4 +1,5 @@
 {
+    "private": true,
     "name": "sourcemint-sdk-requirejs-examples-03-SDKFeatures",
     "version": "0.1.0",
     "engines": {

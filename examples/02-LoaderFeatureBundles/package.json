@@ -1,4 +1,5 @@
 {
+    "private": true,
     "name": "sourcemint-sdk-requirejs-examples-02-LoaderFeatureBundles",
     "version": "0.1.0",
     "engines": {
