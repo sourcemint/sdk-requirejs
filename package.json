@@ -1,6 +1,6 @@
 {
     "name": "sourcemint-sdk-requirejs",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "pm": "npm",
     "dependencies": {
         "q": "0.x",
