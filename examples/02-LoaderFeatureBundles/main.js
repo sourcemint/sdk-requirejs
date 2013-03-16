@@ -4,7 +4,8 @@ var LOADER = require("sourcemint-platform-nodejs/lib/loader"),
 	BUNDLER = require("sourcemint-sdk-requirejs/lib/bundler"),
 	EXAMPLES = require("sourcemint-loader-js/tests/examples"),
 	PATH = require("path"),
-	FS = require("fs");
+	FS = require("fs"),
+	Q = require("q");
 
 
 exports.main = function()
